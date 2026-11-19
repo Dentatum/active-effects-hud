@@ -36,7 +36,6 @@
       "path": "lang/es-ES.json"
     }
   ],
-  "description": "<p>Configurable global effects bar displayed below Scene Navigation.</p>",
   "manifest": "https://raw.githubusercontent.com/Dentatum/active-effects-hud/refs/heads/main/module.json",
   "url": "https://github.com/Dentatum/active-effects-hud",
   "download": "https://github.com/Dentatum/active-effects-hud/archive/refs/heads/main.zip"
