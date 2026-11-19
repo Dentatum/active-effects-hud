@@ -1,0 +1,39 @@
+{
+  "id": "active-effects-hud",
+  "title": "Active Effects HUD",
+  "description": "Configurable global effects bar displayed below Scene Navigation.",
+  "version": "1.5.8",
+  "authors": [
+    {
+      "name": "Dentatum"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.370"
+  },
+  "esmodules": [
+    "scripts/active-effects-hud.js"
+  ],
+  "styles": [
+    "styles/active-effects-hud.css"
+  ],
+  "socket": true,
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es-ES",
+      "name": "Español",
+      "path": "lang/es-ES.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es-ES.json"
+    }
+  ]
+}
