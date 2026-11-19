@@ -2,7 +2,7 @@
   "id": "active-effects-hud",
   "title": "Active Effects HUD",
   "description": "Configurable global effects bar displayed below Scene Navigation.",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "authors": [
     {
       "name": "Dentatum"
