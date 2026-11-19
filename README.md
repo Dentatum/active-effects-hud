@@ -25,9 +25,9 @@ Each effect has its own saved counter.
 | Right-click | Decrease by 1 |
 | Shift + right-click | Decrease by 10 |
 
-Counters cannot be reduced below 1. If a decrease is attempted while the counter is already at 1, the effect is removed.
+Counters cannot be reduced below 0. If a decrease is attempted while the counter is already at 0, the effect is removed.
 
-The counter badge is only displayed when the value is greater than 1.
+The counter badge is only displayed when the value is greater than 0.
 
 ### Reordering effects
 

@@ -52,7 +52,7 @@
   "active-effects-hud.EffectsConfig.DescriptionHint": "Admite formato de Journal y referencias de Foundry como @UUID[...]",
   "active-effects-hud.EffectsConfig.DescriptionPlaceholder": "Describe el efecto que aparecerá al pasar el ratón.",
   "active-effects-hud.EffectsConfig.CounterValue": "Valor del contador",
-  "active-effects-hud.EffectsConfig.CounterValueHint": "Valor actual/inicial del efecto (mínimo 1)",
+  "active-effects-hud.EffectsConfig.CounterValueHint": "Valor actual del efecto (0 o superior)",
   "active-effects-hud.EffectsConfig.Visibility": "Visibilidad",
   "active-effects-hud.EffectsConfig.UserIds": "IDs de usuario",
   "active-effects-hud.EffectsConfig.UserIdsPlaceholder": "ID1, ID2, ID3",

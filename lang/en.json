@@ -52,7 +52,7 @@
   "active-effects-hud.EffectsConfig.DescriptionHint": "Journal-style formatting and Foundry references such as @UUID[...] are supported.",
   "active-effects-hud.EffectsConfig.DescriptionPlaceholder": "Describe the effect shown when hovering over its icon.",
   "active-effects-hud.EffectsConfig.CounterValue": "Counter Value",
-  "active-effects-hud.EffectsConfig.CounterValueHint": "Current/initial effect value (minimum 1)",
+  "active-effects-hud.EffectsConfig.CounterValueHint": "Current effect value (0 or higher)",
   "active-effects-hud.EffectsConfig.Visibility": "Visibility",
   "active-effects-hud.EffectsConfig.UserIds": "User IDs",
   "active-effects-hud.EffectsConfig.UserIdsPlaceholder": "ID1, ID2, ID3",

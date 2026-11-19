@@ -161,7 +161,7 @@ Hooks.once("ready", () => {
           icon: String(effect.icon || DEFAULT_ICON),
           visibility: ["gm", "assistants", "players", "selected"].includes(effect.visibility) ? effect.visibility : "players",
           userIds: Array.isArray(effect.userIds) ? effect.userIds.map(String) : [],
-          count: Math.max(1, Math.trunc(Number(effect.count) || 1))
+          count: Math.max(0, Math.trunc(Number.isFinite(Number(effect.count)) ? Number(effect.count) : 1))
         };
         // Existing records can only be changed if they were visible to this assistant.
         if (visibleIds.has(clean.id) || !current.some(existing => existing.id === clean.id)) {
@@ -565,13 +565,14 @@ async function applyCounterAdjustment(effectId, delta, requester = game.user) {
     const index = effects.findIndex(effect => effect?.id === effectId);
     if (index < 0 || !canUserSeeEffect(effects[index], requester)) return;
 
-    const current = Math.max(1, Math.trunc(Number(effects[index].count) || 1));
+    const current = Math.max(0, Math.trunc(Number.isFinite(Number(effects[index].count)) ? Number(effects[index].count) : 1));
 
-    if (delta < 0 && current === 1) {
-      // Al intentar reducir desde 1, el efecto desaparece de la partida.
+    if (delta < 0 && current === 0) {
+      // Un segundo clic derecho cuando el contador ya está en cero elimina el efecto.
       effects.splice(index, 1);
     } else {
-      effects[index].count = Math.max(1, current + delta);
+      // El contador puede llegar a cero, pero nunca tomar valores negativos.
+      effects[index].count = Math.max(0, current + delta);
     }
 
     await game.settings.set(MODULE_ID, SETTING_KEY, effects);
@@ -649,13 +650,13 @@ function renderHud() {
 
     item.append(img);
 
-    const count = Math.max(1, Math.trunc(Number(effect.count) || 1));
+    const count = Math.max(0, Math.trunc(Number.isFinite(Number(effect.count)) ? Number(effect.count) : 1));
     item.setAttribute(
       "aria-label",
       L("HUD.EffectAria", { name: effect.name || L("Common.Effect"), description: effect.description || "", count })
     );
 
-    if (count > 1) {
+    if (count >= 1) {
       const counter = document.createElement("span");
       counter.className = "aeh-counter";
       counter.textContent = String(count);
@@ -1113,12 +1114,12 @@ class ActiveEffectsConfig extends foundry.applications.api.ApplicationV2 {
     const countField = this._field(
       L("EffectsConfig.CounterValue"),
       "count",
-      Math.max(1, Math.trunc(Number(effect.count) || 1)),
+      Math.max(0, Math.trunc(Number.isFinite(Number(effect.count)) ? Number(effect.count) : 1)),
       "number",
       "1"
     );
     const countInput = countField.querySelector('[name="count"]');
-    countInput.min = "1";
+    countInput.min = "0";
     countInput.step = "1";
     countField.querySelector("span").innerHTML =
       `${L("EffectsConfig.CounterValue")} <small>${L("EffectsConfig.CounterValueHint")}</small>`;
@@ -1230,7 +1231,7 @@ class ActiveEffectsConfig extends foundry.applications.api.ApplicationV2 {
       nameInput?.removeAttribute("aria-invalid");
 
       const parsedCount = Number.parseInt(read("count"), 10);
-      const count = Number.isFinite(parsedCount) ? Math.max(1, parsedCount) : 1;
+      const count = Number.isFinite(parsedCount) ? Math.max(0, parsedCount) : 1;
       const visibility = read("visibility") || "players";
       const userIds = [...(row.querySelector('[name="userIds"]')?.selectedOptions ?? [])]
         .map(option => option.value);
