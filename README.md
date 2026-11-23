@@ -1,10 +1,16 @@
 # Active Effects HUD
 
-**Active Effects HUD** is a configurable effects bar for **Foundry Virtual Tabletop 14**.
-
 The module displays a horizontal row of effect icons below Scene Navigation. It is intended for game-wide modifiers, conditions, blessings, penalties, temporary rules, or any other effects the group needs to keep visible during play.
 
-Each effect can have its own icon, name, description, counter, and visibility rules. The Game Master and Assistant GMs can manage effects according to their permissions, while other players see the effects they are allowed to view.
+Each effect is intended to be a reminder more than an automation. It allows a manual configuration of effects with their own icon, name, description, counter, and visibility rules. The Game Master and Assistant GMs can manage effects according to their permissions, while other players see the effects they are allowed to view.
+
+## Installation
+
+1. Download the module package.
+2. Extract the `active-effects-hud` folder into Foundry's `Data/modules/` directory.
+3. Restart Foundry VTT, or return to the setup screen and refresh the module list.
+4. Open the world and enable **Active Effects HUD** in **Manage Modules**.
+5. If the module was updated, perform a hard refresh in the browser (`Ctrl + F5`) to clear cached JavaScript and styles.
 
 ## Features
 
@@ -63,7 +69,7 @@ The GM is the authority for saving shared effect data. Assistant GM changes are 
 
 Players and Trusted Players have read-only access: they can see permitted effects but cannot open the effect editor or change counters.
 
-## Manual Installation
+## Installation
 
 1. Download the module package.
 2. Extract the `active-effects-hud` folder into Foundry's `Data/modules/` directory.
